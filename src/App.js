@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Routes, Route} from 'react-router-dom'
+import { ThemeProvider } from "@emotion/react";
+import { ColorModeContext, useMode } from "./theme";
+import { CssBaseline } from "@mui/material";
+import Topbar from "./Pages/Global/Topbar";
+import AppSidebar from './Pages/Global/AppSidebar';
+import Dashboard from "./Pages/Dashboard/index";
+import Form from "./Pages/Dashboard/Form";
+import ErrorPage from "./Pages/Dashboard/ErrorPage";
+
+import { ProSidebarProvider } from 'react-pro-sidebar';
+
+
 
 function App() {
+  const [theme, colorMode] = useMode();
+  //console.log(theme,colorMode);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ColorModeContext.Provider value={colorMode} >
+      <ThemeProvider theme={theme}>
+          <CssBaseline/>
+          
+            <ProSidebarProvider>
+            <div className="app">
+            <AppSidebar/>
+            <div className='contents'>
+            <Topbar/>
+              <main> 
+                <Routes>
+                  <Route path="/" element={<Dashboard/>}/>
+                  <Route path="/form" element={<Form/>}/>
+                  <Route path="/page-not-found" element={<ErrorPage/>}/>
+                </Routes>
+              </main>
+              </div>
+            </div>
+            </ProSidebarProvider>
+    </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 
