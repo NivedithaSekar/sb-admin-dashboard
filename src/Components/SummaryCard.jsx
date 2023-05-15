@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Card, CardContent, Slider, Typography, useTheme, Grid } from "@mui/material";
+import { Card, CardContent, Typography, useTheme, Grid } from "@mui/material";
 import { tokens } from "../theme";
 import IconSVGWrapper from "./IconSVGWrapper";
-import ProgressCircle from "./ProgressCircle";
 import ProgressBar from "./ProgressBar";
 
 
@@ -10,8 +9,6 @@ import ProgressBar from "./ProgressBar";
 // import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 // import AssignmentIcon from '@mui/icons-material/Assignment';
 // import ForumIcon from '@mui/icons-material/Forum';
-
-{/* <Slider disabled defaultValue={+(item.value.slice(0,2))} min={0} max={100} /> */}
 
 
 
