@@ -47,9 +47,7 @@ const SummaryCard = () => {
                         </Typography>
                     </CardContent>
                     {item.component === "Tasks" ? <ProgressBar/>:''}
-                    <IconSVGWrapper sx={{ fontSize: '3.5rem' }} pathIcon={item.icon}>
-                        {/* <path d={item.icon} /> */}
-                    </IconSVGWrapper>
+                    <IconSVGWrapper pathIcon={item.icon} iconSize={'3.5rem'}/>
                 </Card>
                 </Grid>
                 );

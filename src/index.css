@@ -5,7 +5,7 @@ body,
 #root,
 .app,
 .contents {
-  height: 100%;
+  height: auto;
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
@@ -19,6 +19,7 @@ body,
 
 .main-content{
   padding: 0px 3%;
+  padding-bottom: 40px;
 }
 
 .sub-content{

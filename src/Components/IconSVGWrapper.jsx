@@ -1,18 +1,10 @@
 import React from "react";
-import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
+import SvgIcon from '@mui/material/SvgIcon';
 
 
-// function IconSVGWrapper(props:SvgIconProps) {
-//     return (
-//       <SvgIcon >
-//         {props.children}
-//       </SvgIcon>
-//     );
-//   }
-
-function IconSVGWrapper({pathIcon}) {
+function IconSVGWrapper({pathIcon, iconSize}) {
       return (
-        <SvgIcon >
+        <SvgIcon sx={{ fontSize: iconSize }}>
           <path d={pathIcon} /> 
         </SvgIcon>
       );
