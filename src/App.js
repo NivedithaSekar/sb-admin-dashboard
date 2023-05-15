@@ -20,7 +20,6 @@ function App() {
     <ColorModeContext.Provider value={colorMode} >
       <ThemeProvider theme={theme}>
           <CssBaseline/>
-          
             <ProSidebarProvider>
             <div className="app">
             <AppSidebar/>
@@ -33,6 +32,7 @@ function App() {
                   <Route path="/page-not-found" element={<ErrorPage/>}/>
                 </Routes>
               </main>
+              <footer style={{padding:'1rem', textAlign:'center'}}>Copyright © Your Website 2021</footer>
               </div>
             </div>
             </ProSidebarProvider>
